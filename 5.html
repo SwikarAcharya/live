@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌹 For My Sanu, My Princess 🌹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ffb6c1;
+            --red: #ff4d4d;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="red" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>'), auto;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Animated Rose */
+        .rose-container {
+            position: relative;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+
+        .rose {
+            font-size: 100px;
+            animation: bloom 2s ease-in-out;
+            transition: transform 0.3s;
+        }
+
+        .rose:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Petals Animation */
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('https://emojicdn.elk.sh/🌸') no-repeat;
+            background-size: contain;
+            animation: fall linear forwards;
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,77,77,0.2);
+            margin: 40px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s all ease;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reasons List */
+        .reasons {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 600px;
+            font-size: 1.2em;
+        }
+
+        /* Secret Surprise */
+        .secret-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .surprise {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255,77,77,0.3);
+        }
+
+        /* Animations */
+        @keyframes bloom {
+            0% { transform: scale(0) rotate(180deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+            color: var(--red);
+        }
+
+        img.photo {
+            width: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--red);
+            margin: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .rose { font-size: 70px; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌹 Happy Rose Day, Sanu! 🌹</h1>
+        
+        <div class="rose-container" onclick="createPetals()">
+            <div class="rose">🌹</div>
+        </div>
+
+        <div class="love-letter">
+            <h2>To My Sunshine 🌞</h2>
+            <p>Every petal represents how you make my life brighter...</p>
+            <p>You're the:</p>
+            <ul class="reasons">
+                <li>☕ Coffee to my milk</li>
+                <li>🍕 Cheese to my pizza</li>
+                <li>🛌 Only person I'd share my blanket with</li>
+                <li>💖 Best thing that ever happened to me</li>
+            </ul>
+
+            <p>Me looking for ways to impress you more and more!</p>
+
+            <!-- <img src="https://ibb.co/Ld14w871" class="photo" alt="Our Photo"> -->
+            <!-- <img src="https://i.ibb.co/DfQ3Xt2Q/Whats-App-Image-2025-02-01-at-18-08-48.jpg" class="photo" alt="Our Photo"> -->
+            <img src="https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif" class="photo" alt="Our Photo">
+            <!-- <a href="https://ibb.co/Ld14w871"><img src="https://i.ibb.co/DfQ3Xt2Q/Whats-App-Image-2025-02-01-at-18-08-48.jpg" alt="Whats-App-Image-2025-02-01-at-18-08-48" border="0"></a> -->
+        </div>
+
+        <div class="secret-button" onclick="revealSurprise()">🐞</div>
+        <div class="surprise" id="surprise">
+            <h2>Surprise! 💝</h2>
+            <p>You found our secret stash of love!<br>This is for you sanu ❤️🙈🧿:</p>
+            <img src="https://i.ibb.co/DfQ3Xt2Q/Whats-App-Image-2025-02-01-at-18-08-48.jpg" width="200" alt="Romantic Surprise">
+            <p>I will love you like it's my last day in the earth every single day.</p>
+
+            <!-- <img src="https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif" width="200" alt="Romantic Surprise"> -->
+        </div>
+    </div>
+
+    <script>
+        // Petals animation
+        function createPetals() {
+            for(let i = 0; i < 30; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+                petal.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(petal);
+                
+                setTimeout(() => petal.remove(), 5000);
+            }
+        }
+
+        // Reveal surprise
+        function revealSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.style.display = 'block';
+            setTimeout(() => surprise.style.display = 'none', 7000);
+        }
+
+        // Scroll reveal for love letter
+        window.addEventListener('scroll', () => {
+            const letter = document.querySelector('.love-letter');
+            const position = letter.getBoundingClientRect();
+            
+            if(position.top < window.innerHeight * 0.75) {
+                letter.classList.add('reveal');
+            }
+        });
+    </script>
+</body>
+</html>
