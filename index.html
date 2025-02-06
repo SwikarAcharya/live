@@ -174,11 +174,12 @@
 
     <script>
         // Petals animation
-        function createPetals() {
+         function createPetals() {
             for(let i = 0; i < 30; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'petal';
-                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.left = Math.random() * 100 + 'vw'; // Spread across full width
+                petal.style.top = '-50px'; // Start above the screen
                 petal.style.animationDuration = Math.random() * 3 + 2 + 's';
                 petal.style.animationDelay = Math.random() * 2 + 's';
                 document.body.appendChild(petal);
